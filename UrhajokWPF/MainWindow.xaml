@@ -1,0 +1,61 @@
+﻿<Window x:Class="UrhajokWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UrhajokWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Background="#142D3B" Margin="5">
+
+            <TextBlock Text="Űrhajó műveletek" FontSize="25" FontWeight="Bold" Foreground="White" Margin="0,0,0,25"/>
+
+            <Button Content="Adatok betöltése" Height="26" Margin="5,0,5,12" Click="Betoltes_Click"/>
+
+            <Button Content="Hány űrhajó van?" Height="26"  Margin="5,0,5,12" Click="Darab_Click"/>
+
+            <Button Content="Melyiknek a legnagyobb a hatótávja?" Height="26" Margin="5,0,5,12" Click="Legnagyobb_Click"/>
+
+            <Button Content="Kik voltak sikeres küldetésen?" Height="26" Margin="5,0,5,12" Click="Sikeres_Click"/>
+
+            <Button Content="Átlagos legénységszám" Height="26" Margin="5,0,5,12" Click="Atlag_Click"/>
+
+            <Button Content="Gyártók szerinti csoportosítás" Height="26" Margin="5,0,5,12" Click="Csoportositas_Click"/>
+
+            <Button Content="Keresés név alapján" Height="26" Margin="5,0,5,12" Click="Kereses_Click"/>
+
+            <TextBox x:Name="txtKereses" Height="25" Margin="5,0,5,12" FontSize="14"/>
+
+            <Button Content="Összes adat megjelenítése" Height="26" Margin="5,0,5,12" Click="Osszes_Click"/>
+
+        </StackPanel>
+
+        <DataGrid x:Name="dgUrhajok" Grid.Column="1" Margin="5">
+
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Nev" Width="*"/>
+
+                <DataGridTextColumn Header="Legénység" Width="*"/>
+
+                <DataGridTextColumn Header="MaxHatotav" Width="*"/>
+
+                <DataGridTextColumn Header="UzemanyagSzint" Width="*"/>
+
+                <DataGridTextColumn Header="Gyarto" Width="*"/>
+
+                <DataGridTextColumn Header="KuldetesStatusz" Width="*"/>
+
+                <DataGridTextColumn Header="InditasEve" Width="*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
